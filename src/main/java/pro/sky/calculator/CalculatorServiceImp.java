@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.Objects;
 
 @Service
-public class CalculatorServiceImp implements CalculatorService{
+public class CalculatorServiceImp implements CalculatorService {
 
     @Override
     public String sayHello() {
@@ -13,25 +13,35 @@ public class CalculatorServiceImp implements CalculatorService{
     }
 
     @Override
-    public String calculateSum(int num1, int num2) {
-            return num1 + " + " + num2 + " = " + (num1 + num2);
+    public String calculateSum(Integer num1, Integer num2) {
+        checkParams(num1, num2);
+        return num1 + " + " + num2 + " = " + (num1 + num2);
     }
 
     @Override
-    public String calculateSub(int num1, int num2) {
-            return num1 + " - " + num2 + " = " + (num1 - num2);
+    public String calculateSub(Integer num1, Integer num2) {
+        checkParams(num1, num2);
+        return num1 + " - " + num2 + " = " + (num1 - num2);
     }
-    @Override
 
-    public String calculateMult(int num1, int num2){
-            return num1 + " * " + num2 + " = " + (num1 * num2);
+    @Override
+    public String calculateMult(Integer num1, Integer num2) {
+        checkParams(num1, num2);
+        return num1 + " * " + num2 + " = " + (num1 * num2);
     }
-    @Override
 
-    public String calculateDiv(int num1, int num2){
-        if (num2 != 0) {
-            return num1 + " / " + num2 + " = " + (num1 / num2);
+    @Override
+    public String calculateDiv(Integer num1, Integer num2) {
+        checkParams(num1, num2);
+        if (num2 == 0) {
+            return "Деление на ноль невозможно";
         }
-        return "Введите другие значения";
+        return num1 + " / " + num2 + " = " + (num1 / num2);
+    }
+
+    private void checkParams(Integer num1, Integer num2) {
+        if (num1 == null || num2 == null) {
+            throw new IllegalArgumentException("Введите значения обоих параметров");
+        }
     }
 }
