@@ -13,22 +13,22 @@ public class CalculatorServiceImp implements CalculatorService{
     }
 
     @Override
-    public String calculateSum(Integer num1, Integer num2) {
+    public String calculateSum(int num1, int num2) {
             return num1 + " + " + num2 + " = " + (num1 + num2);
     }
 
     @Override
-    public String calculateSub(Integer num1, Integer num2) {
+    public String calculateSub(int num1, int num2) {
             return num1 + " - " + num2 + " = " + (num1 - num2);
     }
     @Override
 
-    public String calculateMult(Integer num1, Integer num2){
+    public String calculateMult(int num1, int num2){
             return num1 + " * " + num2 + " = " + (num1 * num2);
     }
     @Override
 
-    public String calculateDiv(Integer num1, Integer num2){
+    public String calculateDiv(int num1, int num2){
         if (num2 != 0) {
             return num1 + " / " + num2 + " = " + (num1 / num2);
         }

@@ -3,11 +3,11 @@ package pro.sky.calculator;
 public interface CalculatorService {
     String sayHello();
 
-    String calculateSum(Integer num1, Integer num2);
+    String calculateSum(int num1, int num2);
 
-    String calculateSub(Integer num1, Integer num2);
+    String calculateSub(int num1, int num2);
 
-    String calculateMult(Integer num1, Integer num2);
+    String calculateMult(int num1, int num2);
 
-    String calculateDiv(Integer num1, Integer num2);
+    String calculateDiv(int num1, int num2);
 }
