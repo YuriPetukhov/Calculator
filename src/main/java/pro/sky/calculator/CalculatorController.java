@@ -18,8 +18,8 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/calculator/plus")
-    public String calculateSum(@RequestParam() Integer num1,
-                               @RequestParam() Integer num2) {
+    public String calculateSum(@RequestParam(required = true) Integer num1,
+                               @RequestParam(required = true) Integer num2) {
         return calculatorServiceImp.calculateSum(num1, num2);
     }
 

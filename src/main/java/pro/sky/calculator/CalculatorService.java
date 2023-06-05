@@ -10,6 +10,4 @@ public interface CalculatorService {
     String calculateMult(Integer num1, Integer num2);
 
     String calculateDiv(Integer num1, Integer num2);
-
-    boolean check(Integer num1, Integer num2);
 }
