@@ -18,26 +18,26 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/calculator/plus")
-    public String calculateSum(@RequestParam("num1") Integer num1,
-                               @RequestParam("num2") Integer num2) {
+    public String calculateSum(@RequestParam() Integer num1,
+                               @RequestParam() Integer num2) {
         return calculatorServiceImp.calculateSum(num1, num2);
     }
 
     @GetMapping(path = "/calculator/minus")
-    public String calculateSub(@RequestParam("num1") Integer num1,
-                               @RequestParam("num2") Integer num2) {
+    public String calculateSub(@RequestParam(required = true) Integer num1,
+                               @RequestParam(required = true) Integer num2) {
         return calculatorServiceImp.calculateSub(num1, num2);
     }
     @GetMapping(path = "/calculator/multiply")
 
-    public String calculateMult(@RequestParam("num1") Integer num1,
-                                @RequestParam("num2") Integer num2){
+    public String calculateMult(@RequestParam(required = true) Integer num1,
+                                @RequestParam(required = true) Integer num2){
         return calculatorServiceImp.calculateMult(num1, num2);
     }
     @GetMapping(path = "/calculator/divide")
 
-    public String calculateDiv(@RequestParam("num1") Integer num1,
-                               @RequestParam("num2") Integer num2){
+    public String calculateDiv(@RequestParam(required = true) Integer num1,
+                               @RequestParam(required = true) Integer num2){
         return calculatorServiceImp.calculateDiv(num1, num2);
     }
 }
