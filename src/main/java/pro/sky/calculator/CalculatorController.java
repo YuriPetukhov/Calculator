@@ -7,38 +7,38 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalculatorController {
 
-    private final CalculatorService calculatorServiceImp;
+    private final CalculatorService calculatorService;
 
-    public CalculatorController(CalculatorService calculatorServiceImp){
-        this.calculatorServiceImp = calculatorServiceImp;
+    public CalculatorController(CalculatorService calculatorService) {
+        this.calculatorService = calculatorService;
     }
 
-    @GetMapping(path = "/calculator")
+    @GetMapping("/")
     public String sayHello() {
-        return calculatorServiceImp.sayHello();
+        return calculatorService.sayHello();
     }
 
-    @GetMapping(path = "/calculator/plus")
+    @GetMapping("/plus")
     public String calculateSum(@RequestParam(required = false) Integer num1,
                                @RequestParam(required = false) Integer num2) {
-        return calculatorServiceImp.calculateSum(num1, num2);
+        return calculatorService.calculateSum(num1, num2);
     }
 
-    @GetMapping(path = "/calculator/minus")
+    @GetMapping("/minus")
     public String calculateSub(@RequestParam(required = false) Integer num1,
                                @RequestParam(required = false) Integer num2) {
-        return calculatorServiceImp.calculateSub(num1, num2);
+        return calculatorService.calculateSub(num1, num2);
     }
 
-    @GetMapping(path = "/calculator/multiply")
+    @GetMapping("/multiply")
     public String calculateMult(@RequestParam(required = false) Integer num1,
                                 @RequestParam(required = false) Integer num2){
-        return calculatorServiceImp.calculateMult(num1, num2);
+        return calculatorService.calculateMult(num1, num2);
     }
 
-    @GetMapping(path = "/calculator/divide")
+    @GetMapping("/divide")
     public String calculateDiv(@RequestParam(required = false) Integer num1,
                                @RequestParam(required = false) Integer num2){
-        return calculatorServiceImp.calculateDiv(num1, num2);
+        return calculatorService.calculateDiv(num1, num2);
     }
 }
